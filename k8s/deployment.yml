@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teste-k8s-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: teste-k8s
+  template:
+    metadata:
+      labels:
+        app: teste-k8s
+    spec:
+      containers:
+        - name: teste-k8s
+          image: gussf/teste-k8s:2
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
