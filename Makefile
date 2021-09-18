@@ -5,7 +5,7 @@ pushimage:
 	docker push gussf/teste-k8s:latest
 
 container:
-	docker run --rm -d -p 8080:8080 teste-k8s
+	docker run --rm -d -p 8080:8080 gussf/teste-k8s
 
 createk8s:
 	kind create cluster --name teste-k8s-cluster
